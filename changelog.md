@@ -6,6 +6,7 @@ Beta 0.2.0:
     -Added Exit Feature
     -Added Start Build Feature (Isn't working yet)
 
-Beta 0.3.0:
+Beta 0.3.1:
     -Added Continue Verification Window
+    -Fixed Wrong Spelling in Some Texts
 

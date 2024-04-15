@@ -4,14 +4,14 @@ from tkinter import messagebox
 import sys
 
 def exit():
-    if messagebox.askyesno(title="Exit?", message="Are You Shure That You Want To Exit?"):
+    if messagebox.askyesno(title="Exit?", message="Are You Shure,S That You Want To Exit?"):
         sys.exit(0)
 
 def no_feature():
     messagebox.showinfo(title="No Feature", message="This Is An Feature That Isn't Implementet Yet!")
 
 def do_you_like_to_continue():
-    if messagebox.askyesno(title="Continue", message="Do You Want To Continue? In This Version You Cant Change Anithing After Building!"):
+    if messagebox.askyesno(title="Continue", message="Do You Want To Continue? In This Version You Can't Change Anything After Building!"):
         no_feature()
 
 
