@@ -1,10 +1,13 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+from tkinter import Listbox
 import sys
 
+server_providers = ["Vanilla", "Spigot"]
+
 def exit():
-    if messagebox.askyesno(title="Exit?", message="Are You Shure,S That You Want To Exit?"):
+    if messagebox.askyesno(title="Exit?", message="Are You Shure That You Want To Exit?"):
         sys.exit(0)
 
 def no_feature():
@@ -26,7 +29,14 @@ root.rowconfigure(0, weight=1)
 ttk.Button(mainframe, text="Exit", command=exit).grid(column=1, row=1, sticky=W)
 ttk.Button(mainframe, text="Start", command=do_you_like_to_continue).grid(column=2, row=1, sticky=W)
 
+test = Listbox(mainframe)
+#test.pack()
+
+for provider in server_providers:
+    test.insert("end", provider)
+
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=5, pady=5)
 
 root.mainloop()
+

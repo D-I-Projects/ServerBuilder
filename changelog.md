@@ -10,3 +10,5 @@ Beta 0.3.1:
     -Added Continue Verification Window
     -Fixed Wrong Spelling in Some Texts
 
+Beta 0.3.2:
+    -Fixed Wrong Spelling in Exit Window
