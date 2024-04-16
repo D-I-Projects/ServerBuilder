@@ -8,6 +8,6 @@ System requirements:
 Note:
     -The Programm Could Work On Other Systems But There Is No Support For These Systems
 
-How To  Use Code:
+How To Use Code:
     1. Open Terminl and move to Build Directory
-    2. run python3 GUI.py
+    2. run python3 GUI.py (If you are a Developer use python3 GUI.py -developer=true)
