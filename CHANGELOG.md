@@ -18,3 +18,9 @@ Beta 0.4.3:
     -Added listbox for choosing Server Providers (Hasn't any functionality yet)
     -Added Developer Mode (use python3 GUI.py -developer=true)
         -You can now update Programm code in GUI Window
+
+Beta 0.7.3:
+    -Added download for latest Vanilla Server
+    -Added Checkbutton for using Latest Version 
+    -Updated Layout
+    
