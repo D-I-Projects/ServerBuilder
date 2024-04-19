@@ -1,13 +1,18 @@
 from tkinter import *
 from tkinter import ttk
-from Functions import no_feature
 import os
 import sys
+from tkinter.ttk import Style
 
+#Mainframe
 root = Tk()
-mainframe = ttk.Frame(root, padding="2 1 12 12")
-root.title("Menue")
+root.title("Server Builder")
+mainframe = ttk.Frame(root, padding="3 3 12 12")
 mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
+root.geometry("250x80")
+#root.iconbitmap("icon.ico")
 
 
 for Arg in sys.argv:
@@ -19,10 +24,16 @@ for Arg in sys.argv:
 
 def setup_server():
     root.destroy()
-    os.system(f"python3 ./GUI.py -developer={str(developer_mode).lower()}")
+    os.system(f"python3 ./GUISetupServer.py -developer={str(developer_mode).lower()}")
 
-ttk.Button(mainframe, text="Launch-Server", command=no_feature).grid(column=1, row=1, sticky=W)
-ttk.Button(mainframe, text="Setup-Server", command=setup_server).grid(column=3, row=1, sticky=W)
+def launch_server():
+    root.destroy()
+    os.system(f"python3 ./GUILaunchServer.py -developer={str(developer_mode).lower()}")
+
+ttk.Button(mainframe, text="Launch-Server", command=launch_server).grid(column=0, row=0, sticky=W)
+ttk.Button(mainframe, text="Setup-Server", command=setup_server).grid(column=0, row=1, sticky=W)
 
 root.mainloop()
+
+input("Press Enter to exit...")
 
