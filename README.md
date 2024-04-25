@@ -1,4 +1,4 @@
-#Server Builder
+# Server Builder
 
 
 The program creates a Minecraft Server, that your also able to launch with our program. 
