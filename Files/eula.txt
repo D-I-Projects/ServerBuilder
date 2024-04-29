@@ -1,0 +1,4 @@
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://aka.ms/MinecraftEULA).
+#Sun Apr 21 11:53:44 CEST 2024
+#(Message not from Mojang) the eula is getting accpted when clicking at Launch Server in 1. GUILaunchServer.py / Ln 39, Col 63, 2. The messagebox itself is at Functions.py Ln 29 - 31. More info is inside the README.txt file that's located inside the README folder.
+eula=true
