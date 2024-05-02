@@ -16,7 +16,7 @@ More Infos are in the README's, if you've got questions just ask us by direct me
 
 ## Libaries
 
-configparser = Copyright  / MIT License / https://pypi.org/project/configparser/
+- configparser = Copyright  / MIT License / https://pypi.org/project/configparser/ / ???
 
        Permission is hereby granted, free of charge, to any person obtaining a copy
        of this software and associated documentation files (the "Software"), to
@@ -37,7 +37,7 @@ configparser = Copyright  / MIT License / https://pypi.org/project/configparser/
        IN THE SOFTWARE.
 
 
-logging = Copyright / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.org/project/logging/#files
+- logging = Copyright / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.org/project/logging/#files
 
       Copyright (C) 2001-2005 by Vinay Sajip. All Rights Reserved.
       
@@ -56,7 +56,8 @@ logging = Copyright / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.org/
       AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
       IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-requests = Copyright  / Apache Software License (Apache 2.0) / https://pypi.org/project/requests/
+- requests = Copyright  / Apache Software License (Apache 2.0) / https://pypi.org/project/requests/ / Copyright 2019 Kenneth Reitz
+
 
 
                                        Apache License
@@ -235,7 +236,7 @@ requests = Copyright  / Apache Software License (Apache 2.0) / https://pypi.org/
             of your accepting any such warranty or additional liability.
 
 
-messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/ / Copyright (c) 2021 PlayerG9
+- messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/ / Copyright (c) 2021 PlayerG9
 
       MIT License
       
@@ -259,8 +260,7 @@ messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/ / 
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.
 
-
-psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/ /  Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola
+- psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/ /  Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola
 
       BSD 3-Clause License
       
@@ -292,6 +292,52 @@ psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psut
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+- datetime = Copyright / Zope Public License (ZPL) Version 2.1 / https://pypi.org/project/DateTime/#files / Zope Foundation and Contributors
+
+       Zope Public License (ZPL) Version 2.1
+       
+       A copyright notice accompanies this license document that identifies the
+       copyright holders.
+       
+       This license has been certified as open source. It has also been designated as
+       GPL compatible by the Free Software Foundation (FSF).
+       
+       Redistribution and use in source and binary forms, with or without
+       modification, are permitted provided that the following conditions are met:
+       
+       1. Redistributions in source code must retain the accompanying copyright
+       notice, this list of conditions, and the following disclaimer.
+       
+       2. Redistributions in binary form must reproduce the accompanying copyright
+       notice, this list of conditions, and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+       
+       3. Names of the copyright holders must not be used to endorse or promote
+       products derived from this software without prior written permission from the
+       copyright holders.
+       
+       4. The right to distribute this software or to use it for any purpose does not
+       give you the right to use Servicemarks (sm) or Trademarks (tm) of the
+       copyright
+       holders. Use of them is covered by separate agreement with the copyright
+       holders.
+       
+       5. If any files are modified, you must cause the modified files to carry
+       prominent notices stating that you changed the files and the date of any
+       change.
+       
+       Disclaimer
+       
+       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY EXPRESSED
+       OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+       OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+       EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+       INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+       LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+       PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+       LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 (Correct us if we are wrong, forgot something or got the wrong License)
 
