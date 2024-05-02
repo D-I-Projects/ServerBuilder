@@ -52,18 +52,15 @@ logging = Copyright    / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.o
       AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
       IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*
 
-datetime = Copyright   / Zope Public License (ZPL 2.1) / https://pypi.org/project/DateTime/#files
-
 requests = Copyright  / Apache Software License (Apache 2.0) / https://pypi.org/project/requests/
+
+
 
 messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/
 
 psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/
 
 (Correct us if we are wrong)
-
-- Copyright (C) 2001-2005 by Vinay Saji
-- 
 
 
        
