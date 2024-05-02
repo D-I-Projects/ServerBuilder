@@ -11,7 +11,6 @@ More Infos are in the README's, if you've got questions just ask us by direct me
 ![bannerd i](https://github.com/Ivole32/Mc-Server-Builder/assets/158351052/1ddbd9ff-9783-42d2-9e31-a1f3a1a0b768)
 
 ## Libaries
-os = Standard 
 
 configparser = Copyright  / MIT License / https://pypi.org/project/configparser/
 
