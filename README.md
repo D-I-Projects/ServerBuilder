@@ -15,25 +15,11 @@ logging = Copyright    / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.o
 
 datetime = Copyright   / Zope Public License (ZPL 2.1) / https://pypi.org/project/DateTime/#files
 
-tkinter = 
-
-ttk =  Tkinter?
-
-subprocess = Standard  
-
-webbrowser = Standard  
-
 requests = Copyright  / Apache Software License (Apache 2.0) / https://pypi.org/project/requests/
-
-shutil = Standard  
 
 messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/
 
-sys = Standard  
-
 psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/
-
-platform = Standard 
 
 ## D&I Logo
 
