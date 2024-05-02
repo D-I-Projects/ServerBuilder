@@ -33,7 +33,7 @@ configparser = Copyright  / MIT License / https://pypi.org/project/configparser/
        IN THE SOFTWARE.
 
 
-logging = Copyright    / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.org/project/logging/#files
+logging = Copyright / Copyright (C) 2001-2005 by Vinay Sajip / https://pypi.org/project/logging/#files
 
       Copyright (C) 2001-2005 by Vinay Sajip. All Rights Reserved.
       
@@ -231,7 +231,7 @@ requests = Copyright  / Apache Software License (Apache 2.0) / https://pypi.org/
             of your accepting any such warranty or additional liability.
 
 
-messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/
+messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/ / Copyright (c) 2021 PlayerG9
 
       MIT License
       
