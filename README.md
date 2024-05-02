@@ -14,7 +14,7 @@ More Infos are in the README's, if you've got questions just ask us by direct me
 
 - We are always using a free font "Open Sans" to prevent problems with copyrights.
 
-## Libaries
+## Libaries/Copyright
 
 - configparser = Copyright  / MIT License / https://pypi.org/project/configparser/ / ???
 
