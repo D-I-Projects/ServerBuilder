@@ -1,8 +1,8 @@
 # Server Builder
 
 
-The program creates a Minecraft Server, that your also able to launch with our program. 
-Just to clarify the point of the program in a simple sentence, I would say it makes creating a Minecraft Server easier!
+With our program you can easily create Minecraft Server's and start them. We gurantee that we will add a function to add Plugins too!
+For sure that's not everything what our program does, just download it and have a look at it by yourself!
 
 More Infos are in the README's, if you've got questions just ask us by direct messages @iv32. or @wfxey. In the case that you cant sent us a message ask it on our Minecraft Server https://discord.gg/t4mYGbErAn.
 
