@@ -256,7 +256,7 @@ messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/ / 
       SOFTWARE.
 
 
-psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/
+psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/ /  Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola
 
       BSD 3-Clause License
       
