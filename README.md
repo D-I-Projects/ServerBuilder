@@ -21,6 +21,7 @@ messagebox = Copyright   / MIT License / https://pypi.org/project/messagebox/
 
 psutil = Copyright  / BSD License (BSD-3-Clause) / https://pypi.org/project/psutil/
 
+(Correct us if we are wrong)
 ## D&I Logo
 
 ![bannerd i](https://github.com/Ivole32/Mc-Server-Builder/assets/158351052/1ddbd9ff-9783-42d2-9e31-a1f3a1a0b768)
