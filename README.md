@@ -38,7 +38,7 @@ In the program itself we will ask you again if your accepting Minecraft's EULA, 
 
 ## Libaries/Copyright
 
-- configparser = Copyright  / MIT License / https://pypi.org/project/configparser/ / ???
+- configparser = Copyright  / MIT License / https://pypi.org/project/configparser/
 
        Permission is hereby granted, free of charge, to any person obtaining a copy
        of this software and associated documentation files (the "Software"), to
