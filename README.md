@@ -1,3 +1,6 @@
+
+![DISCORD](https://github.com/Ivole32/Server-Builder/assets/158351052/533caa69-dd9d-4cdb-9896-6db7b1ec912b) 
+
 # Server Builder
 
 
