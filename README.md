@@ -2,7 +2,7 @@
 # Server Builder
 
 
-![1](https://github.com/Ivole32/Server-Builder/assets/158351052/c41187c1-3f1c-48ff-82fe-03a7c356b40c) ![2](https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4) ![3](https://github.com/Ivole32/Server-Builder/assets/158351052/4bbadd1b-8168-40ee-bfd1-1247d33b49a5)
+![1](https://github.com/Ivole32/Server-Builder/assets/158351052/c41187c1-3f1c-48ff-82fe-03a7c356b40c) ![2](https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4)(https://discord.gg/UYF9b7gup9) ![3](https://github.com/Ivole32/Server-Builder/assets/158351052/4bbadd1b-8168-40ee-bfd1-1247d33b49a5)
 
 
 With our program you can easily create Minecraft Server's and start them. We gurantee that we will add a function to add Plugins too!
