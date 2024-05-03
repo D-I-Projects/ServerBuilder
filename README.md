@@ -10,7 +10,9 @@ More Infos are in the README's, if you've got questions just ask us by direct me
 
 ![bannerd i](https://github.com/Ivole32/Mc-Server-Builder/assets/158351052/1ddbd9ff-9783-42d2-9e31-a1f3a1a0b768)
 
-## Notes
+## Minecraft's EULA
+
+## Installation
 
 - If the Installation file for Windows doesn't work just install Python(3.9.7), Java(21) and Python Libaries(requests, tkinter, psutil) manually.
   
@@ -18,7 +20,7 @@ More Infos are in the README's, if you've got questions just ask us by direct me
          2. Java : "https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html"
          3. Python Libaries : "pip install requests tk psutil"
   
-- We also are always using a free font "Open Sans" to prevent problems with copyrights.
+
 
 ## Libaries/Copyright
 
