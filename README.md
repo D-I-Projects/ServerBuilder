@@ -1,8 +1,7 @@
 
 # Server Builder
 
-<a href="URL"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/c41187c1-3f1c-48ff-82fe-03a7c356b40c" alt="Releases"></a> <a href="URL"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4" alt="Releases"></a> (https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4) ![3](https://github.com/Ivole32/Server-Builder/assets/158351052/4bbadd1b-8168-40ee-bfd1-1247d33b49a5)
-
+<a href="URL"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/c41187c1-3f1c-48ff-82fe-03a7c356b40c" alt="Releases"></a> <a href="URL"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4" alt="Discord"></a> <a href="URL"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/4bbadd1b-8168-40ee-bfd1-1247d33b49a5" alt="Spigot"></a>
 
 With our program you can easily create Minecraft Server's and start them. We gurantee that we will add a function to add Plugins too!
 For sure that's not everything what our program does, just download it and have a look at it by yourself!
