@@ -1,5 +1,5 @@
 
-Links : ![DISCORD](https://github.com/Ivole32/Server-Builder/assets/158351052/533caa69-dd9d-4cdb-9896-6db7b1ec912b)  ![RELEASES](https://github.com/Ivole32/Server-Builder/assets/158351052/9c02429c-a692-4f0d-a5e5-1a849cea32cc) ![SPIGOT](https://github.com/Ivole32/Server-Builder/assets/158351052/d9a2cf95-2128-4a96-9c2d-e3a9702d0e92)
+![SPIGOT](https://github.com/Ivole32/Server-Builder/assets/158351052/611c4269-755f-4da5-887b-92c418848645)
 
 
 
