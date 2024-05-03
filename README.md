@@ -273,7 +273,6 @@ In the program itself we will ask you again if your accepting Minecraft's EULA, 
 
 
 (Correct us if we are wrong, forgot something or got the wrong License)
-
 (You can always contact us on our Discord Server and we will fix the problem immediately)
 
 
