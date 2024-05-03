@@ -1,5 +1,5 @@
 
-![1](https://github.com/Ivole32/Server-Builder/assets/158351052/012679b4-907f-4392-8a1d-6eb519a1eeeb) ![2](https://github.com/Ivole32/Server-Builder/assets/158351052/592c6d34-b85f-4a9f-ae2b-8a34d2b4f54c) ![3](https://github.com/Ivole32/Server-Builder/assets/158351052/d92cbab2-c58f-4381-8f15-14c57384985b)
+![1](https://github.com/Ivole32/Server-Builder/assets/158351052/c41187c1-3f1c-48ff-82fe-03a7c356b40c) ![2](https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4) ![3](https://github.com/Ivole32/Server-Builder/assets/158351052/4bbadd1b-8168-40ee-bfd1-1247d33b49a5)
 
 
 
