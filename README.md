@@ -1,7 +1,4 @@
 
-![SPIGOT](https://github.com/Ivole32/Server-Builder/assets/158351052/611c4269-755f-4da5-887b-92c418848645)
-
-
 
 # Server Builder
 
