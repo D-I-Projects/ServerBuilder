@@ -12,6 +12,9 @@ More Infos are in the README's, if you've got questions just ask us by direct me
 
 ## Minecraft's EULA
 
+With downloading our program you agree to Minecraft's EULA (https://www.minecraft.net/en-us/eula).
+In the program itself we will ask you again if your accepting Minecraft's EULA, without accepting theres no way to launch the server.jar file.
+
 ## Installation
 
 - If the Installation file for Windows doesn't work just install Python(3.9.7), Java(21) and Python Libaries(requests, tkinter, psutil) manually.
