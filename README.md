@@ -1,7 +1,7 @@
 
 # Server Builder
 
-[![CodeQL](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml) ![Name](link) 	![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![CodeQL](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 With our program you can easily create Minecraft Server's and start them. We gurantee that we will add a function to add Plugins too!
 For sure that's not everything what our program does, just download it and have a look at it by yourself!
