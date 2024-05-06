@@ -4,12 +4,12 @@
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-With our program you can easily create Minecraft Server's and start them. We gurantee that we will add a function to add Plugins too!
-For sure that's not everything what our program does, just download it and have a look at it by yourself!
+With our program you can easily create Minecraft Servers and start them. We gurantee that we will add a function to add plugins too!
+For sure that is not the only thing our program does, just download it and have a look at it by yourself!
 
 ## Note
 
-More Infos are in the README's, if you've got questions just ask us by direct messages @iv32. or @wfxey. In the case that you cant sent us a message ask it on our Discord Server https://discord.gg/t4mYGbErAn.
+More infos can be found in the README file, in doubt just place your questions by direct messages @iv32. or @wfxey. In the case that you can not sent us a message, contact us via our Discord Server https://discord.gg/t4mYGbErAn.
 Please don't directly judge us if we've got something wrong with Licenses if you contact us we will directly solve the issue!
 
 ## D&I Logo
