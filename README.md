@@ -278,6 +278,7 @@ In the program itself we will ask you again if your accepting Minecraft's EULA, 
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+***The other libaries we use are all python standard libaries!***
 
 (Correct us if we are wrong, forgot something or got the wrong License)
 (You can always contact us on our Discord Server and we will fix the problem immediately)
