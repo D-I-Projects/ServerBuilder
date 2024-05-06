@@ -9,7 +9,7 @@ For sure that's not everything what our program does, just download it and have 
 ## Note
 
 More Infos are in the README's, if you've got questions just ask us by direct messages @iv32. or @wfxey. In the case that you cant sent us a message ask it on our Minecraft Server https://discord.gg/t4mYGbErAn.
-Please don't directly judge us if we've got something wrong with Licenses. Again, if you contact us we will directly solve the issue!
+Please don't directly judge us if we've got something wrong with Licenses if you contact us we will directly solve the issue!
 
 ## D&I Logo
 
