@@ -1,4 +1,4 @@
-MIT License with Third-Party Software Acknowledgment and Prohibition on Sale
+MIT License with Third-Party Software Acknowledgment
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software including third-party software components, subject to the following conditions:
 
@@ -10,8 +10,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
    - This product includes software developed by the `psutil` project, available under the BSD License (BSD-3-Clause) at https://pypi.org/project/psutil/. Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola.
    - This product includes software components from the Python standard library, which are licensed under the Python Software Foundation License (PSF License).
 
-3. Redistributions of the Software or derivative works of the Software, in whole or in part, shall not be sold.
-
-4. Neither the name of the D&I Projects nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+3. Neither the name of the D&I Projects nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
