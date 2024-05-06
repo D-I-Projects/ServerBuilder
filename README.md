@@ -1,4 +1,4 @@
-[![CodeQL](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml) 
+[![CodeQL](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml) [![DevSkim](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml)
 
 # Server Builder
 
