@@ -6,3 +6,8 @@ With our program, you can only open the software more easily and manage it by us
 In my opinion, it's the same as downloading it from anywhere else.
 
 If there are problems or disagreements, please contact us! We will definitely remove it from our software immediately.
+
+- Vanilla : https://www.minecraft.net/de-de/download/server
+- PaperMC : https://papermc.io/downloads/paper
+- Spigot : https://getbukkit.org/download/spigot
+- Purpur : https://purpurmc.org/
