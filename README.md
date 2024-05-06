@@ -1,7 +1,7 @@
 
 # Server Builder
 
-<a href="https://github.com/Ivole32/Server-Builder/releases"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/c41187c1-3f1c-48ff-82fe-03a7c356b40c" alt="Releases"></a> <a href="https://discord.gg/UYF9b7gup9"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/ea73c14a-49fd-408c-a815-a2bd9f8c5da4" alt="Discord"></a> <a href="https://www.spigotmc.org/resources/server-builder.116423/"><img src="https://github.com/Ivole32/Server-Builder/assets/158351052/4bbadd1b-8168-40ee-bfd1-1247d33b49a5" alt="Spigot"></a>
+[![CodeQL](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml)
 
 With our program you can easily create Minecraft Server's and start them. We gurantee that we will add a function to add Plugins too!
 For sure that's not everything what our program does, just download it and have a look at it by yourself!
