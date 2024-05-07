@@ -61,7 +61,7 @@ menubar = Menu(root)
 root.config(menu=menubar)
 
 
-url = "https://github.com/Ivole32/Server-Builder/releases/tag/v1.8-Windows"
+url = "https://github.com/Ivole32/Server-Builder/releases/tag/v1.9"
 
 def search_for_update():
     try:
@@ -83,15 +83,8 @@ def search_for_update():
 themeMenu = Menu(menubar, tearoff=0, font=("Open Sans", 8))
 menubar.add_cascade(label="Update", menu=themeMenu)
 themeMenu.add_command(label="Search for update", command=search_for_update)
-
-for Arg in sys.argv:
-    print(Arg)
-    if "-developer=true" == Arg:
-        developer_mode = True
-    else:
-        developer_mode = False
     
-window_text = ttk.Label(mainframe, text="Server Builder 1.7", font=("Open Sans", 16), underline=True)
+window_text = ttk.Label(mainframe, text="Server Builder 1.8", font=("Open Sans", 16), underline=True)
 window_text.grid(column=0, row=0, sticky=tk.W)
 
 window_text = ttk.Label(mainframe, text="Other", font=("Open Sans", 12), underline=True)

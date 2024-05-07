@@ -74,9 +74,7 @@ def value1():
     if not messagebox12:  
         logger.info("User did not accept the EULA.")
         return
-
     
-    # Erstellen des absoluten Pfads zur eula.txt
     file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "eula.txt")
 
     try:

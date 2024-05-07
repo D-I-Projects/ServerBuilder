@@ -59,9 +59,9 @@ def create_buttons():
 def text_gui():
     window_text = ttk.Label(mainframe, text="Name : ServerBuilder")
     window_text.grid(column=0, row=1, sticky=W)
-    window_text = ttk.Label(mainframe, text="Version : 1.7 (release)")
+    window_text = ttk.Label(mainframe, text="Version : 1.8 (release)")
     window_text.grid(column=0, row=2, sticky=W)
-    window_text = ttk.Label(mainframe, text="Release Date : 5.05.2024")
+    window_text = ttk.Label(mainframe, text="Release Date : x")
     window_text.grid(column=0, row=3, sticky=W)
     window_text = ttk.Label(mainframe, text="Autor's : wfxey, ivole32")
     window_text.grid(column=0, row=4, sticky=W)
