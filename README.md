@@ -6,6 +6,7 @@ In case there are some important issues just write us and maybe we decide to fix
 # Server Builder
 
 [![DevSkim](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml)
+
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 
 With our program you can easily create Minecraft Servers and start them.
