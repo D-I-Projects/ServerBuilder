@@ -333,15 +333,28 @@ edit_menu.add_command(label="About", command=about)
 menubar.add_cascade(label="File", menu=file_menu)
 menubar.add_cascade(label="Settings", menu=edit_menu)
 
-
 def switch(indicator_lb, page):
+    # Festlegen der Standardhintergrundfarbe
+    default_bg_color = "SystemButtonFace"
+    # Überprüfen, ob das Betriebssystem Linux ist
+    if platform.system() == "Linux":
+        # Verwenden einer alternativen Hintergrundfarbe für Linux
+        default_bg_color = "grey"  # Hier die gewünschte alternative Farbe einsetzen
+    
+    # Ändern der Hintergrundfarbe aller Labels in options_fm
     for child in options_fm.winfo_children():
         if isinstance(child, tk.Label):
-            child["bg"] = "SystemButtonFace"
+            child["bg"] = default_bg_color
+    
+    # Setzen der Hintergrundfarbe des ausgewählten Indikatorlabels auf Schwarz
     indicator_lb["bg"] = "black"
+    
+    # Löschen aller Widgets in main_fm, um Platz für die neue Seite zu machen
     for fm in main_fm.winfo_children():
         fm.destroy()
-        root.update()
+        root.update()  # Aktualisieren des Fensters, um die Änderungen anzuzeigen
+    
+    # Aufrufen der Funktion der neuen Seite, um sie anzuzeigen
     page()
 
 options_fm = tk.Frame(root)
