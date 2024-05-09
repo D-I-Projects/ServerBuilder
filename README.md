@@ -1,3 +1,9 @@
+# Upadtes
+
+We don't do any updates anymore!
+In case there are some important issues we will do a update...
+
+
 [![CodeQL](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/codeql.yml) [![DevSkim](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml)
 
 # Server Builder
