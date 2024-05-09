@@ -566,11 +566,11 @@ def launcher_page():
                 eula_message_label.config(text="")
                 return True
             else:
-                start_button.config(state=tk.DISABLED)
+                start_button.config(state=tk.NORMAL)
                 eula_message_label.config(text="Please accept the EULA to start the server.")
                 return False
         else:
-            start_button.config(state=tk.DISABLED)
+            start_button.config(state=tk.NORMAL)
             eula_message_label.config(text="Please accept the EULA to start the server.")
             return False
 
