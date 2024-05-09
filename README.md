@@ -1,4 +1,4 @@
-# Upadtes
+# Updates
 
 We don't do any updates anymore!
 In case there are some important issues we will do a update...
