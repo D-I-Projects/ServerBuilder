@@ -545,6 +545,7 @@ def launcher_page():
         logger.info("Starting the server with RAM value: %s", ram_value_str)
         start_download = threading.Thread(target=os.system, args=(f"java -Xmx{ram_value_str} -jar Minecraft_jar_file/server.jar",))
         start_download.start()
+        root.after(100, check_eula)
 
     def check_jar_file():
         jar_file_path = "Minecraft_jar_file/server.jar"
@@ -573,7 +574,9 @@ def launcher_page():
             start_button.config(state=tk.NORMAL)
             eula_message_label.config(text="Please accept the EULA to start the server.")
             return False
-
+        
+    root.after(100, check_eula)
+    
     def on_start_button_click():
         logger.info("Checking if the EULA is already accepted.")
         if not check_eula():
