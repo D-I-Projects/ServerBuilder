@@ -36,11 +36,3 @@ In the program itself we will ask you again if your accepting Minecraft's EULA, 
       
     - Java (for Mojang's software)
     - Windows 11 or Linux Mint (optional,tested)
-
-- Inside the folder from our Windows version of the program theres a installation file that you can run to install everything that you need.
-
-- If the Installation file for Windows doesn't work just install Python(3.9.7), Java(21) and Python Libaries(requests, tkinter, psutil) manually.
-  
-         1. Python : "https://www.python.org/downloads/"
-         2. Java : "https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html"
-         3. Python Libaries : "pip install requests tk psutil"
