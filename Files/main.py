@@ -1,5 +1,4 @@
 import tkinter as tk
-import ctypes as ct
 from tkinter import *
 import logging
 import os
@@ -11,10 +10,26 @@ import platform
 import webbrowser
 from tkinter import messagebox
 import shutil
-import subprocess
 from tkinter import filedialog
 import threading
 import tkinter.ttk as ttk
+import psutil
+import sys
+
+
+def check_internet_connection():
+    try:
+        response = requests.get("http://www.google.com", timeout=5)
+        if response.status_code == 200:
+            return True
+    except requests.RequestException:
+        # Show a message box indicating no internet connection
+        root = tk.Tk()
+        root.withdraw()  # Hide the main window
+        messagebox.showwarning("Warning", "No internet!")
+    return False
+
+check_internet_connection()
 
 dir_plugins = "plugins"
 if not os.path.exists(dir_plugins):
@@ -84,6 +99,48 @@ def log_settings():
 
 logger = log_settings()
 
+def get_config(section, key):
+    logger.info("Loaded get_config.")
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    return config[section][key]
+
+def exit(sys, messagebox, title="Exit?", message="Are you sure that you want to exit?"):
+    if messagebox.askyesno(title=title, message=message):
+        sys.exit(0)
+        logger.info("Loaded exit.")
+
+def do_you_like_to_continue_afterbuild(messagebox, download_function):
+    result = messagebox.askquestion("Continue", "Do you want to start the download?", icon='warning') 
+    if result == 'yes':
+        download_function()
+    else:
+        messagebox.showinfo("Cancelled", "Download cancelled.")
+        logger.info("Loaded do_you_like_to_continue_afterbuild.")
+
+def set_settings_setup_server(root, provider_listbox, mainframe, N, W, E, S):
+    provider_listbox.grid(column=0, row=2)
+    provider_listbox.selection_set(0)
+    mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+    logger.info("Loaded set_settings_setup_server.")
+
+def do_you_like_to_continue_only_if_installed_serverjar(messagebox, function, title="Continue", message="Do you want to continue? If you didn't executed Setup-Server before, nothing will happen! Please also make sure you DO NOT have two different jar files in your folder!"):
+    if messagebox.askyesno(title=title, message=message):
+        function()
+        logger.info("Loaded do_you_like_to_continue_only_if_installed_serverjar")
+        
+def accepting_eula(messagebox, function, title="Accepting eula!", message="With pressing yes your accepting the eula of Minecraft. The accepted eula is located inside eula.txt.", icon="warning"):
+    if messagebox.askyesno(title=title, message=message):
+        function()
+        logger.info("Loaded accepting_eula.")
+
+def no_selection(messagebox, title="No Selection", message="No selection for server Systems!"):
+    messagebox.showinfo(title=title, message=message)
+    logger.info("Loaded no_selection.")
+
+RAM = int(get_config('Hardware', 'ram'))
+Max_RAM = RAM * (3/4)
+
 def download_icon(icon_url, file_name):
     try:
         if os.path.exists(file_name):
@@ -116,6 +173,7 @@ icon_image = PhotoImage(file="icon.png")
 root.wm_iconphoto(True, icon_image)
 menubar = Menu(root)
 root.config(menu=menubar)
+root.resizable(width=False,height=False)
 
 def delete_server_files1():
     logger.info("User pressed delete server files!")
@@ -243,9 +301,38 @@ def search_for_update():
         logger.error("Fehler: Es konnte keine Verbindung zur Website hergestellt werden.", e)
 
 
-themeMenu = Menu(menubar, tearoff=0, font=("Open Sans", 8))
-menubar.add_cascade(label="Update", menu=themeMenu)
-themeMenu.add_command(label="Search for update", command=search_for_update)
+file_menu = tk.Menu(menubar, tearoff=0)
+file_menu.add_command(label="Exit", command=root.quit)
+
+def about():
+    messagebox.showinfo("Server Builder", "No information given.")
+
+def reset_config_and_restart():
+    try:
+        os.remove("config.ini")
+        config.write_data()
+        logger.info("Configuration file reset successful.")
+        root.destroy()  # Schließe das aktuelle Fenster
+        restart_program()  # Starte das Programm erneut
+    except FileNotFoundError:
+        logger.error("Configuration file not found.")
+    except Exception as e:
+        logger.error(f"Error resetting configuration file: {e}")
+
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
+
+# Edit menu
+edit_menu = tk.Menu(menubar, tearoff=0)
+edit_menu.add_command(label="Delete all server files", command=delete_server_files1)
+edit_menu.add_command(label="Reset config.ini", command=reset_config_and_restart)
+edit_menu.add_command(label="About", command=about)
+
+# Add File and Edit menus to the menu bar
+menubar.add_cascade(label="File", menu=file_menu)
+menubar.add_cascade(label="Settings", menu=edit_menu)
+
 
 def switch(indicator_lb, page):
     for child in options_fm.winfo_children():
@@ -333,9 +420,9 @@ def remove_plugin():
     
     try:
         os.remove(file_path)  
-        print("Plugin successfully removed:", os.path.basename(file_path))
+        logger.info("Plugin successfully removed:", os.path.basename(file_path))
     except Exception as e:
-        print("Error removing plugin:", e)
+        logger.error("Error removing plugin:", e)
 
 def add_plugin():  
     inital_dir = current_dir
@@ -346,11 +433,11 @@ def add_plugin():
             os.makedirs(plugins_folder)
         try:
             shutil.copy(file_path, plugins_folder)
-            print("Plugin successfully added:", os.path.basename(file_path))
+            logger.info("Plugin successfully added:", os.path.basename(file_path))
         except Exception as e:
-            print("Error adding plugin:", e)
+            logger.error("Error adding plugin:", e)
     else:
-        print("No valid .jar file selected.")
+        logger.info("No valid .jar file selected.")
 
 def software_page():
     global main_fm
@@ -359,7 +446,7 @@ def software_page():
         widget.destroy()
 
     software_frame = tk.Frame(main_fm)
-    software_frame.grid(row=0, column=0, padx=10, pady=10)
+    software_frame.grid(row=0, column=0, padx=50, pady=10)  # Hier haben wir padx angepasst
 
     tree = ttk.Treeview(software_frame, columns=("Name", "Download Link", "Release Date"), show="headings", selectmode="browse")
     tree.heading("Name", text="Name")
@@ -422,10 +509,91 @@ def software_page():
         messagebox.showinfo("Server Builder", "The server software has been downloaded successfully.")
 
     start_button = tk.Button(software_frame, text="Start Download", command=start_download)
-    start_button.grid(row=2, column=0, columnspan=2, sticky="ew", pady=10)
+    start_button.grid(row=2, column=0, columnspan=2, sticky="ew", pady=10, padx=50)  # Hier haben wir padx angepasst
+
 
 def launcher_page():
-    pass
+    def create_eula_file():
+        file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "eula.txt")
+        try:
+            with open(file_path, 'w') as file:
+                file.write("eula=true\n")
+                logger.info(f"EULA file successfully created: {file_path}")
+        except FileNotFoundError:
+            logger.error("The file 'eula.txt' does not exist.")
+        except PermissionError:
+            logger.error("No permission to create the file 'eula.txt'.")
+        except Exception as e:
+            logger.error(f"Error creating the EULA file: {e}")
+
+    def start_server():
+        ram_value = int(ram_var.get())
+        ram_value_str = f"{ram_value}G"
+        logger.info("Starting the server with RAM value: %s", ram_value_str)
+        start_download = threading.Thread(target=os.system, args=(f"java -Xmx{ram_value_str} -jar Minecraft_jar_file/server.jar",))
+        start_download.start()
+
+    def check_jar_file():
+        jar_file_path = "Minecraft_jar_file/server.jar"
+        if not os.path.exists(jar_file_path):
+            start_button.config(state=tk.DISABLED)
+            jar_message_label.config(text="Please download the server.jar file.")
+        else:
+            start_button.config(state=tk.NORMAL)
+            jar_message_label.config(text="")
+            check_eula()
+
+    def check_eula():
+        eula_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "eula.txt")
+        if os.path.exists(eula_file_path):
+            with open(eula_file_path, 'r') as file:
+                eula_content = file.read().strip()
+            if "eula=true" in eula_content:
+                start_button.config(state=tk.NORMAL)
+                eula_message_label.config(text="")
+                return True
+            else:
+                start_button.config(state=tk.DISABLED)
+                eula_message_label.config(text="Please accept the EULA to start the server.")
+                return False
+        else:
+            start_button.config(state=tk.DISABLED)
+            eula_message_label.config(text="Please accept the EULA to start the server.")
+            return False
+
+    def on_start_button_click():
+        logger.info("Checking if the EULA is already accepted.")
+        if not check_eula():
+            logger.info("Opening a dialog to accept the EULA.")
+            messagebox12 = messagebox.askyesno("Server Builder", "By starting the server, you accept the Minecraft End User License Agreement.")
+            if not messagebox12:  
+                logger.info("User did not accept the EULA.")
+                return
+            create_eula_file()
+        start_server()
+
+    launcher_frame = tk.Frame(main_fm)
+
+    ttk.Label(launcher_frame, text="RAM Allocation (GB):").pack()
+
+    ram_var = tk.DoubleVar()
+    ram_scale = Scale(launcher_frame, from_=1, to=Max_RAM, orient=tk.HORIZONTAL, variable=ram_var, length=200, width=20)
+    ram_scale.pack()
+
+    start_button = ttk.Button(launcher_frame, text="Start Server", command=on_start_button_click)
+    start_button.pack()
+
+    eula_message_label = ttk.Label(launcher_frame, text="")
+    eula_message_label.pack()
+
+    jar_message_label = ttk.Label(launcher_frame, text="")
+    jar_message_label.pack()
+
+    launcher_frame.pack(fill=tk.BOTH, expand=True)
+
+    check_jar_file()
+
+
 
 def discord():
     global main_fm
@@ -433,7 +601,7 @@ def discord():
     discord_label = tk.Label(discord_frame, text="Opening Discord...", font=("Open Sans", 16), fg="black")
     discord_label.pack(pady=80)
     discord_frame.pack(fill=tk.BOTH, expand=True)
-    webbrowser.open_new_tab("https://github.com/Ivole32/Server-Builder/releases")
+    webbrowser.open_new_tab("https://discord.gg/Z4x6Z5eT7Q")
 
 main_fm = tk.Frame(root)
 main_fm.pack(fill=tk.BOTH, expand=True)
