@@ -32,6 +32,7 @@ In the program itself we will ask you again if your accepting Minecraft's EULA, 
     - Python
            - Installed requests
            - Installed psutil
+           - Installed tkinter
       
     - Java (for Mojang's software)
     - Windows 11 or Linux Mint (optional,tested)
