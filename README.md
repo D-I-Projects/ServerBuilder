@@ -23,7 +23,7 @@ Please don't directly judge us if we've got something wrong with Licenses if you
 
 ## Current possible Virus status
 
-![Design ohne Titel](https://github.com/Ivole32/Server-Builder/assets/158351052/e4bce922-9728-4dd0-ae8d-2dc553f716e0)
+![Design ohne Titel](https://github.com/Ivole32/Server-Builder/assets/158351052/df9a4e70-9666-4d56-941b-af20abc2e95f)
 
 
 ## Minecraft's EULA
