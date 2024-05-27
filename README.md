@@ -21,6 +21,11 @@ Please don't directly judge us if we've got something wrong with Licenses if you
 
 ![bannerd i](https://github.com/Ivole32/Mc-Server-Builder/assets/158351052/1ddbd9ff-9783-42d2-9e31-a1f3a1a0b768)
 
+## Current possible Virus status
+
+![Design ohne Titel](https://github.com/Ivole32/Server-Builder/assets/158351052/e4bce922-9728-4dd0-ae8d-2dc553f716e0)
+
+
 ## Minecraft's EULA
 
 With downloading our program you agree to Minecraft's EULA (https://www.minecraft.net/en-us/eula).
