@@ -21,12 +21,6 @@ Please don't directly judge us if we've got something wrong with Licenses if you
 
 ![bannerd i](https://github.com/Ivole32/Mc-Server-Builder/assets/158351052/1ddbd9ff-9783-42d2-9e31-a1f3a1a0b768)
 
-## Current possible Virus status
-
-![Design ohne Titel](https://github.com/Ivole32/Server-Builder/assets/158351052/df9a4e70-9666-4d56-941b-af20abc2e95f)
-
-*Last update : 28.05.2024*
-
 ## Minecraft's EULA
 
 With downloading our program you agree to Minecraft's EULA (https://www.minecraft.net/en-us/eula).
@@ -42,3 +36,9 @@ In the program itself we will ask you again if your accepting Minecraft's EULA, 
       
     - Java (for Mojang's software)
     - Windows 11 or Linux Mint (optional,tested)
+
+## Current possible Virus status
+
+![Design ohne Titel](https://github.com/Ivole32/Server-Builder/assets/158351052/df9a4e70-9666-4d56-941b-af20abc2e95f)
+
+*Last update : 28.05.2024*
