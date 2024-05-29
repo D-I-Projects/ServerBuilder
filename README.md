@@ -1,8 +1,3 @@
-# Updates
-
-We won't release any updates from now on!
-In case there are some important issues just write us and maybe we decide to fix it...
-
 # Server Builder
 
 [![DevSkim](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml)
