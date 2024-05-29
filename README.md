@@ -12,9 +12,9 @@ For sure that is not the only thing our program does, just download it and have 
 Just place your questions by direct messages @iv32. or @wfxey. In the case that you can not sent us a message, contact us via our Discord Server https://discord.gg/t4mYGbErAn.
 Please don't directly judge us if we've got something wrong with Licenses if you contact us we will directly solve the issue!
 
-## D&I Logo
+## Server Builder Logo
 
-![bannerd i](https://github.com/Ivole32/Mc-Server-Builder/assets/158351052/1ddbd9ff-9783-42d2-9e31-a1f3a1a0b768)
+![ServerBuilderRemakeLogoGIF](https://github.com/Ivole32/Server-Builder/assets/158351052/69567477-4437-4938-82c7-3ee23983770a)
 
 ## Minecraft's EULA
 
