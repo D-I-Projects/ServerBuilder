@@ -16,17 +16,19 @@ import psutil
 import sys
 from pypresence import Presence
 import time
+import urllib.request
+from threading import Thread
 
 #Discord Client ID
 client_id = "1245459087584661513"
 
 #Directory stuff
-directory = "SB_FILES"
+directory = "SC_FILES"
 current_dir = os.getcwd()
 path = os.path.join(current_dir, directory)
 
 try:
-    #Create SB_FILES
+    #Create SC_FILES
     os.mkdir(path)
     print("Verzeichnis '%s' erstellt" % directory)
 except FileExistsError:
@@ -38,7 +40,7 @@ except Exception as e:
 
 #Logger Settings
 def log_settings():
-    log_dir = os.path.join(current_dir, "SB_FILES", "Logs")
+    log_dir = os.path.join(current_dir, "SC_FILES", "Logs")
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
@@ -79,11 +81,11 @@ def check_internet_connection():
 #Icon download
 def download_icon(icon_url, file_name):
     try:
-        sb_files_dir = os.path.join(current_dir, 'SB_FILES')  # Pfad zum SB_FILES Verzeichnis
-        if not os.path.exists(sb_files_dir):
-            os.makedirs(sb_files_dir)  # Verzeichnis erstellen, wenn es nicht existiert
+        SC_FILES_dir = os.path.join(current_dir, 'SC_FILES')  # Pfad zum SC_FILES Verzeichnis
+        if not os.path.exists(SC_FILES_dir):
+            os.makedirs(SC_FILES_dir)  # Verzeichnis erstellen, wenn es nicht existiert
 
-        file_path = os.path.join(sb_files_dir, file_name)  # Pfad zur Datei im SB_FILES Verzeichnis
+        file_path = os.path.join(SC_FILES_dir, file_name)  # Pfad zur Datei im SC_FILES Verzeichnis
 
         if os.path.exists(file_path):
             logger.info(f"The file {file_name} already exists.")
@@ -129,13 +131,13 @@ class Config:
         }
         config['Advanced'] = {'Full-RAM': False, 'Developer': False}
 
-        config_path = os.path.join(current_dir, 'SB_FILES', 'config.ini')
+        config_path = os.path.join(current_dir, 'SC_FILES', 'config.ini')
         with open(config_path, 'w') as configfile:
             config.write(configfile)
 
     def get_data(self, section, key):
         config = configparser.ConfigParser()
-        config_path = os.path.join(current_dir, 'SB_FILES', 'config.ini')
+        config_path = os.path.join(current_dir, 'SC_FILES', 'config.ini')
         config.read(config_path)
         return config[section][key]
 
@@ -144,7 +146,7 @@ config.write_data()
 
 #Stray
 def load_image():
-    image_path = os.path.join(current_dir, 'SB_FILES', 'icon.png')
+    image_path = os.path.join(current_dir, 'SC_FILES', 'icon.png')
     if os.path.exists(image_path):
         return Image.open(image_path)
     else:
@@ -168,7 +170,7 @@ def start_tray_icon():
 def get_config(section, key):
     logger.info("Loaded config.")
     config = configparser.ConfigParser()
-    config_path = os.path.join(current_dir, 'SB_FILES', 'config.ini')
+    config_path = os.path.join(current_dir, 'SC_FILES', 'config.ini')
     config.read(config_path)
     if section in config and key in config[section]:
         return config[section][key]
@@ -184,7 +186,7 @@ def switch(page):
 
 #Create CREATED_SERVERS.txt and override specific Line
 def overwrite_specific_line(line_number, text):
-    file_path = "SB_FILES/CREATED_SERVERS.txt"
+    file_path = "SC_FILES/CREATED_SERVERS.txt"
     if not os.path.exists(file_path):
         with open(file_path, "w") as file:
             pass
@@ -205,59 +207,57 @@ def overwrite_specific_line(line_number, text):
     with open(file_path, "w") as file:
         file.writelines(lines)
 
-
-def read_specific_line_with_success(line_number):
-    file_path = "SB_FILES/CREATED_SERVERS.txt"
-    if os.path.exists(file_path):
-        with open(file_path, "r") as file:
-            lines = file.readlines()
-        if len(lines) >= line_number:
-            line_content = lines[line_number - 1].strip()
-            success = True if line_content else False
-            return line_content, success
-        else:
-            return "Die angegebene Zeile existiert nicht.", False
-    else:
-        return "Die Datei existiert noch nicht oder ist leer.", False
-
 #__Check Lines__
 
+def read_specific_value_from_config(config_index, section, key):
+    config_path = os.path.join(current_dir, 'SC_FILES', f'Server_{config_index}.ini')
+    config = configparser.ConfigParser()
+
+    if os.path.exists(config_path):
+        config.read(config_path)
+        if section in config and key in config[section]:
+            return config[section][key], True
+        else:
+            return None, False
+    else:
+        return None, False
+
 # Line 1
-cs_line1, success1 = read_specific_line_with_success(1)
-logger.debug("Line 1 = %s Success = %s", cs_line1, success1)
-if success1 == True:
+cs_value1, success1 = read_specific_value_from_config(1, 'Server', 'Server Name')
+logger.debug("Line 1 = %s Success = %s", cs_value1, success1)
+if success1:
     logger.debug("Line 1 wurde erfolgreich gelesen.")
 else:
     logger.debug("Fehler beim Lesen von Line 1.")
 
 # Line 2
-cs_line2, success2 = read_specific_line_with_success(2)
-logger.debug("Line 2 = %s Success = %s", cs_line2, success2)
-if success2 == True:
+cs_value2, success2 = read_specific_value_from_config(2, 'Server', 'Server Name')
+logger.debug("Line 2 = %s Success = %s", cs_value2, success2)
+if success2:
     logger.debug("Line 2 wurde erfolgreich gelesen.")
 else:
     logger.debug("Fehler beim Lesen von Line 2.")
 
 # Line 3
-cs_line3, success3 = read_specific_line_with_success(3)
-logger.debug("Line 3 = %s Success = %s", cs_line3, success3)
-if success3 == True:
+cs_value3, success3 = read_specific_value_from_config(3, 'Server', 'Server Name')
+logger.debug("Line 3 = %s Success = %s", cs_value3, success3)
+if success3:
     logger.debug("Line 3 wurde erfolgreich gelesen.")
 else:
     logger.debug("Fehler beim Lesen von Line 3.")
 
 # Line 4
-cs_line4, success4 = read_specific_line_with_success(4)
-logger.debug("Line 4 = %s Success = %s", cs_line4, success4)
-if success4 == True:
+cs_value4, success4 = read_specific_value_from_config(4, 'Server', 'Server Name')
+logger.debug("Line 4 = %s Success = %s", cs_value4, success4)
+if success4:
     logger.debug("Line 4 wurde erfolgreich gelesen.")
 else:
-    logger.debug("Fehler beim Lesen von Line 5.")
+    logger.debug("Fehler beim Lesen von Line 4.")
 
 # Line 5
-cs_line5, success5 = read_specific_line_with_success(5)
-logger.debug("Line 5 = %s Success = %s", cs_line5, success5)
-if success5 == True:
+cs_value5, success5 = read_specific_value_from_config(5, 'Server', 'Server Name')
+logger.debug("Line 5 = %s Success = %s", cs_value5, success5)
+if success5:
     logger.debug("Line 5 wurde erfolgreich gelesen.")
 else:
     logger.debug("Fehler beim Lesen von Line 5.")
@@ -282,7 +282,7 @@ logger.info("OS Release = %s", OS_RELEASE)
 logger.info("Python Version = %s", PYTHON_VERSION)
 logger.info("---------------------------------")
 
-plugins_folder_path = os.path.join(current_dir, "SB_FILES", "plugins")
+plugins_folder_path = os.path.join(current_dir, "SC_FILES", "plugins")
 logger.info("Plugins folder path = %s", plugins_folder_path)
 
 if not os.path.exists(plugins_folder_path):
@@ -291,7 +291,7 @@ if not os.path.exists(plugins_folder_path):
 
 #Remove Plugin
 def remove_plugin():
-    initial_dir = os.path.join(current_dir, "SB_FILES", "plugins")
+    initial_dir = os.path.join(current_dir, "SC_FILES", "plugins")
     file_path = filedialog.askopenfilename(initialdir=initial_dir, filetypes=[("Jar files", "*.jar")])
     if not file_path:  
         return
@@ -306,7 +306,7 @@ def add_plugin():
     initial_dir = os.path.join(current_dir)
     file_path = filedialog.askopenfilename(initialdir=initial_dir, filetypes=[("Jar files", "*.jar")])
     if file_path and os.path.isfile(file_path):
-        plugins_folder = os.path.join(initial_dir, "SB_FILES", "plugins")
+        plugins_folder = os.path.join(initial_dir, "SC_FILES", "plugins")
         if not os.path.exists(plugins_folder):
             os.makedirs(plugins_folder)
         try:
@@ -318,7 +318,7 @@ def add_plugin():
         logger.info("No valid .jar file selected.")
 
 def icon_path():
-    return os.path.join(os.getcwd(), 'SB_FILES', 'icon.png')
+    return os.path.join(os.getcwd(), 'SC_FILES', 'icon.png')
 
 if check_internet_connection():
     app = ctk.CTk()
@@ -464,53 +464,26 @@ def server_page():
     global radio_var
     radio_var = ctk.IntVar(value=0)
     
-    if success1 == True:
-        servername1 = "Example"
-        radiobutton_1 = ctk.CTkRadioButton(server_frame, text=servername1,command=radiobutton_event, variable=radio_var, value=1)
-        radiobutton_1.pack(padx=10, pady=10)
-    else: logger.info("Server 1 doesn't exist. (This is a common error!)")
-    
-    if success2 == True:
-        servername2 = "Example"
-        radiobutton_2 = ctk.CTkRadioButton(server_frame, text=servername2,command=radiobutton_event, variable=radio_var, value=2)
-        radiobutton_2.pack(padx=10, pady=10)
-    else: logger.info("Server 2 doesn't exist. (This is a common error!)")
-    
-    if success3 == True:
-        servername3 = "Example"
-        radiobutton_3 = ctk.CTkRadioButton(server_frame, text=servername3,command=radiobutton_event, variable=radio_var, value=3)
-        radiobutton_3.pack(padx=10, pady=10)
-    else: logger.info("Server 3 doesn't exist. (This is a common error!)")
-    
-    if success4 == True:
-        servername4 = "Example"
-        radiobutton_4 = ctk.CTkRadioButton(server_frame, text=servername4,command=radiobutton_event, variable=radio_var, value=4)
-        radiobutton_4.pack(padx=10, pady=10)
-    else: logger.info("Server 4 doesn't exist. (This is a common error!)")
-    
-    if success5 == True:
-        servername5 = "Example"
-        radiobutton_5 = ctk.CTkRadioButton(server_frame, text=servername5,command=radiobutton_event, variable=radio_var, value=5)
-        radiobutton_5.pack(padx=10, pady=10)
-    else: logger.info("Server 5 doesn't exist. (This is a common error!)")
+    server_buttons = []
 
-    if success1 == True:
-            confirm_button = ctk.CTkButton(server_frame, text="Confirm", command=perform_selected_action)
-            confirm_button.pack(padx=10, pady=10)
-    elif success2 == True:
-                confirm_button = ctk.CTkButton(server_frame, text="Confirm", command=perform_selected_action)
-                confirm_button.pack(padx=10, pady=10)
-    elif success3 == True: 
-                confirm_button = ctk.CTkButton(server_frame, text="Confirm", command=perform_selected_action)
-                confirm_button.pack(padx=10, pady=10)
-    elif success4 == True:
-                    confirm_button = ctk.CTkButton(server_frame, text="Confirm", command=perform_selected_action)
-                    confirm_button.pack(padx=10, pady=10)
-    elif success5 == True:
-                        confirm_button = ctk.CTkButton(server_frame, text="Confirm", command=perform_selected_action)
-                        confirm_button.pack(padx=10, pady=10)
-    else: label = ctk.CTkLabel(server_frame, text="No Servers avaiable!")
-    label.pack(pady="10", padx="10")
+    # Iterate over available servers
+    for i in range(1, 6):
+        server_config, success = read_specific_value_from_config(i, 'Server', 'Server Name')
+        
+        if success:
+            server_name = server_config
+            radiobutton = ctk.CTkRadioButton(server_frame, text=server_name, command=radiobutton_event, variable=radio_var, value=i)
+            radiobutton.pack(padx=10, pady=10)
+            server_buttons.append(radiobutton)
+        else:
+            logger.info(f"Server {i} doesn't exist. (This is a common error!)")
+    
+    if server_buttons:
+        confirm_button = ctk.CTkButton(server_frame, text="Confirm", command=perform_selected_action)
+        confirm_button.pack(padx=10, pady=10)
+    else:
+        label = ctk.CTkLabel(server_frame, text="No Servers available!")
+        label.pack(pady=10, padx=10)
             
             
 def perform_selected_action():
@@ -526,7 +499,103 @@ def perform_selected_action():
     elif selected_option == 5:
         logger.info("Selected (My Server 5)")
 
+class DownloadGUI:
+    def __init__(self, url, save_path):
+        self.url = url
+        self.save_path = save_path
+        self.root = tk.Tk()
+        self.root.title("Downloading")
+        self.progress = ctk.CTkProgressBar(self.root, mode="indeterminate")
+        self.progress.pack(padx=20, pady=10)
+        
+    def start_download(self):
+        self.progress.start()
+        self.root.after(100, self.download_file)
+        self.root.mainloop()
+        
+    def download_file(self):
+        urllib.request.urlretrieve(self.url, self.save_path)
+        self.progress.stop()
+        messagebox.showinfo("Download Completed", "The JAR file has been successfully downloaded and saved.")
+        self.root.destroy()
+        
 #Create Server Page
+class Config_Server:
+    def __init__(self, server_name, version, software, max_players, filename='config_server.ini'):
+        self.configparser = configparser
+        self.server_name = server_name
+        self.version = version
+        self.software = software
+        self.max_players = max_players
+        self.filename = filename
+
+    def write_data(self):
+        logger.info(f"Writing {self.filename}")
+        config = self.configparser.ConfigParser()
+        config["Server"] = {
+            'Server Name': self.server_name,
+            'Selected Version': self.version,
+            'Selected Software': self.software,
+            'Max Player': self.max_players,
+        }
+        SC_FILES_dir = os.path.join(current_dir, 'SC_FILES')
+        os.makedirs(SC_FILES_dir, exist_ok=True)
+
+        # Find the next available server slot
+        for i in range(1, 6):
+            config_path = os.path.join(SC_FILES_dir, f'Server_{i}.ini')
+            if not os.path.exists(config_path):
+                with open(config_path, 'w') as configfile:
+                    config.write(configfile)
+                logger.info(f"Configuration saved to {config_path}")
+
+                # Create server directory and download JAR file
+                server_dir = os.path.join(SC_FILES_dir, f'Server_{i}')
+                os.makedirs(server_dir, exist_ok=True)
+                jar_url = get_jar_url(self.version, self.software)
+                if jar_url:
+                    jar_path = os.path.join(server_dir, 'server.jar')
+                    urllib.request.urlretrieve(jar_url, jar_path)
+                    logger.info(f"Server JAR downloaded to {jar_path}")
+                else:
+                    logger.warning("No URL found for JAR file.")
+                
+                return True 
+        else:
+            logger.warning("Server limit reached. Cannot create more servers.")
+            return False
+
+    def get_data(self, section, key):
+        config = configparser.ConfigParser()
+        config_path = os.path.join(current_dir, 'SC_FILES', self.filename)
+        config.read(config_path)
+        return config[section][key]
+
+def get_jar_url(version, software):
+    # Dictionary mit den URLs für verschiedene Versionen und Software
+    jar_urls = {
+        "1.20.6": {
+            "Bukkit": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.20.6.jar",
+            "Spigot": "https://download.getbukkit.org/spigot/spigot-1.20.6.jar",
+            "Vanilla": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar"
+        },
+        "1.20.4": {
+            "Bukkit": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.20.4.jar",
+            "Spigot": "https://download.getbukkit.org/spigot/spigot-1.20.4.jar",
+            "Vanilla": "https://download.getbukkit.org/spigot/spigot-1.20.4.jar"
+        },
+        "1.19.4": {
+            
+        }
+    }
+
+    # Überprüfen, ob die Version und Software in den URLs vorhanden sind
+    if version in jar_urls and software in jar_urls[version]:
+        return jar_urls[version][software]
+    else:
+        # Wenn keine entsprechende URL gefunden wurde, gib None zurück
+        return None
+
 def create_server_page():
     logger.info("Loaded Create Server Page")
     create_server_frame = ctk.CTkFrame(main_fm)
@@ -542,6 +611,12 @@ def create_server_page():
         logger.info(f"Selected Software: {selected_software}")
         logger.info(f"Max Player: {player_count}")
 
+        config_server = Config_Server(server_name, selected_version, selected_software, player_count)
+        success = config_server.write_data()
+        
+        if not success:
+            messagebox.showwarning("Limit reached", "You can only own 5 servers at the same time!")
+
     def validate_inputs():
         if entry.get() and selected_option.get() != "Select Version" and software_option.get() != "Select Software":
             confirm_button.configure(state=tk.NORMAL, fg_color="green")
@@ -550,28 +625,48 @@ def create_server_page():
 
     def option_changed(choice):
         software_option.set("Select Software")
-        software_menu['values'] = []
+        software_menu.configure(values=[])
 
         if choice != "Select Version":
             software_menu.configure(state=tk.NORMAL, fg_color="grey7")
-            if choice == "1.20.6":
-                software_menu.configure(values=["Software A", "Software B"])
-            elif choice == "1.20.4":
-                software_menu.configure(values=["Software C", "Software D"])
-            elif choice == "1.20.2":
-                software_menu.configure(values=["Software E", "Software F"])
-            elif choice == "1.19.4":
-                software_menu.configure(values=["Software G", "Software H"])
-            elif choice == "1.18.2":
-                software_menu.configure(values=["Software I", "Software J"])
-            elif choice == "1.16.5":
-                software_menu.configure(values=["Software K", "Software L"])
-            elif choice == "1.12.2":
-                software_menu.configure(values=["Software M", "Software N"])
+            software_menu.configure(values=["Bukkit", "Spigot", "Vanilla"])
         else:
             software_menu.configure(state=tk.DISABLED, fg_color="grey")
 
         validate_inputs()
+
+    def open_progress_window(url, save_path):
+        progress_window = tk.Toplevel()
+        progress_window.title("Downloading JAR File")
+        progress_window.geometry("300x100")
+
+        progress_label = ctk.CTkLabel(progress_window, text="Downloading JAR File...")
+        progress_label.pack(pady=10)
+
+        progress_bar = ctk.CTkProgressBar(progress_window, length=200, mode='determinate')
+        progress_bar.pack(pady=5)
+
+        download_thread = Thread(target=download_jar_file, args=(url, save_path, progress_bar, progress_window))
+        download_thread.start()
+
+    def download_jar_file(url, save_path, progress_bar, progress_window):
+        try:
+            response = requests.get(url, stream=True)
+            total_size = int(response.headers.get('content-length', 0))
+
+            with open(save_path, 'wb') as file:
+                bytes_downloaded = 0
+                for data in response.iter_content(chunk_size=1024):
+                    file.write(data)
+                    bytes_downloaded += len(data)
+                    progress_bar['value'] = (bytes_downloaded / total_size) * 100
+                    progress_window.update_idletasks()
+
+            messagebox.showinfo("Download Complete", "JAR file downloaded successfully!")
+        except Exception as e:
+            messagebox.showerror("Download Failed", f"Failed to download JAR file: {str(e)}")
+        finally:
+            progress_window.destroy()
 
     settings_label = ctk.CTkLabel(create_server_frame, text="Create Server", font=("Open Sans", 25))
     settings_label.pack(pady=15)
@@ -587,10 +682,7 @@ def create_server_page():
     software_label.pack(pady=(20, 0))
 
     selected_option = ctk.StringVar(value="Select Version")
-    option_menu = ctk.CTkOptionMenu(create_server_frame,
-                                    values=["1.20.6", "1.20.4", "1.20.2", "1.19.4", "1.18.2", "1.16.5", "1.12.2"],
-                                    variable=selected_option,
-                                    command=option_changed)
+    option_menu = ctk.CTkOptionMenu(create_server_frame, values=["1.20.6", "1.20.4", "1.20.2", "1.19.4", "1.18.2", "1.16.5", "1.12.2"], variable=selected_option, command=option_changed)
     option_menu.pack(pady=20)
 
     software_label = ctk.CTkLabel(create_server_frame, text="Server Software", font=("Open Sans", 13))
@@ -610,11 +702,8 @@ def create_server_page():
     def update_slider_label(value):
         rounded_value = int(round(float(value)))
         slider_label.configure(text=f"Max Player: {rounded_value}")
-
-
     player_slider = ctk.CTkSlider(player_slider_frame, from_=2, to=100, command=update_slider_label)
     player_slider.pack()
-
 
     slider_label = ctk.CTkLabel(player_slider_frame, text="Player Count: 20", font=("Open Sans", 13))
     slider_label.pack(pady=10)
@@ -624,37 +713,31 @@ def create_server_page():
 
     validate_inputs()  # Initial validation
 
-class Config_Server:
-    def __init__(self, filename='config_server.ini'):
-        self.configparser = configparser
-        self.platform = platform
-        self.my_system = platform.uname()
-        self.RAM = str(round(psutil.virtual_memory().total / (1024.**3)))
-        self.filename = filename
+def get_jar_url(version, software):
+    # Dictionary mit den URLs für verschiedene Versionen und Software
+    jar_urls = {
+        "1.20.6": {
+            "Bukkit": "https://example.com/bukkit-1.20.6.jar",
+            "Spigot": "https://example.com/spigot-1.20.6.jar",
+            "Vanilla": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar"
+        },
+        "1.20.4": {
+            "Bukkit": "https://example.com/bukkit-1.20.4.jar",
+            "Spigot": "https://example.com/spigot-1.20.4.jar",
+            "Vanilla": "https://example.com/vanilla-1.20.4.jar"
+        },
+        # Weitere Versionen und URLs hier hinzufügen
+    }
 
-    def write_data(self):
-        logger.info("Writing " + self.filename)
-        config = self.configparser.ConfigParser()
-        config["Server"] = {
-            'Server Name': self.my_system.system,
-            'Selected Version': self.my_system.release,
-            'Selected Software': self.my_system.version,
-            'Max Palyer': self.my_system.machine,
-        }
-        config['Advanced'] = {'Full-RAM': False, 'Developer': False}
+    # Überprüfen, ob die Version und Software in den URLs vorhanden sind
+    if version in jar_urls and software in jar_urls[version]:
+        return jar_urls[version][software]
+    else:
+        # Wenn keine entsprechende URL gefunden wurde, gib None zurück
+        pass
 
-        config_path = os.path.join(current_dir, 'SB_FILES', self.filename)
-        with open(config_path, 'w') as configfile:
-            config.write(configfile)
-
-    def get_data(self, section, key):
-        config = configparser.ConfigParser()
-        config_path = os.path.join(current_dir, 'SB_FILES', self.filename)
-        config.read(config_path)
-        return config[section][key]
-
-config_server = Config_Server(filename='custom_config.ini')
-config_server.write_data()
+def dashboard():
+    pass
 
 def settings_page():
     logger.info("Loaded Settings Page")
@@ -663,15 +746,6 @@ def settings_page():
     
     settings_label = ctk.CTkLabel(settings_frame, text="Experimental", font=("Open Sans", 25))
     settings_label.pack(pady=15)
-    
-    settings_label = ctk.CTkLabel(settings_frame, text="Test1", font=("Open Sans", 16))
-    settings_label.pack(pady=15)
-    
-    line_number_entry = ctk.CTkEntry(settings_frame, width=5)
-    line_number_entry.pack(pady=5)
-
-    read_button = ctk.CTkButton(settings_frame, text="Read specific line from CREATED_SERVERS.txt", command=lambda: messagebox.showinfo("Text aus bestimmter Zeile", read_specific_line_with_success(int(line_number_entry.get()))))
-    read_button.pack(pady=5)
 
 def update_rich_presence():
     RPC = Presence(client_id)
