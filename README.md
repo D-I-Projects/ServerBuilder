@@ -12,10 +12,6 @@ For sure that is not the only thing our program does, just download it and have 
 Just place your questions by direct messages @iv32. or @wfxey. In the case that you can not sent us a message, contact us via our Discord Server https://discord.gg/t4mYGbErAn.
 Please don't directly judge us if we've got something wrong with Licenses if you contact us we will directly solve the issue!
 
-## Team
-
-[![wfxey GitHub stats](https://github-readme-stats.vercel.app/api?username=wfxey&show_icons=true&layout=compact&theme=dark)](https://github.com/wfxey) [![Ivole32 GitHub stats](https://github-readme-stats.vercel.app/api?username=Ivole32&show_icons=true&layout=compact&theme=dark)](https://github.com/Ivole32)
-
 ## Minecraft's EULA
 
 With downloading our program you agree to Minecraft's EULA (https://www.minecraft.net/en-us/eula).
