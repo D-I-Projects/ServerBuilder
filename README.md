@@ -7,15 +7,16 @@
 With our program you can easily create Minecraft Servers and start them.
 For sure that is not the only thing our program does, just download it and have a look at it by yourself!
 
-[![wfxey GitHub stats](https://github-readme-stats.vercel.app/api?username=wfxey&show_icons=true&layout=compact&theme=dark)](https://github.com/wfxey)     [![Ivole32 GitHub stats](https://github-readme-stats.vercel.app/api?username=Ivole32&show_icons=true&layout=compact&theme=dark)](https://github.com/Ivole32)
 ## Note
 
 Just place your questions by direct messages @iv32. or @wfxey. In the case that you can not sent us a message, contact us via our Discord Server https://discord.gg/t4mYGbErAn.
 Please don't directly judge us if we've got something wrong with Licenses if you contact us we will directly solve the issue!
 
-## Server Builder Logo
+## Team
 
 ![ServerBuilderRemakeLogoGIF](https://github.com/Ivole32/Server-Builder/assets/158351052/69567477-4437-4938-82c7-3ee23983770a)
+
+[![wfxey GitHub stats](https://github-readme-stats.vercel.app/api?username=wfxey&show_icons=true&layout=compact&theme=dark)](https://github.com/wfxey) [![Ivole32 GitHub stats](https://github-readme-stats.vercel.app/api?username=Ivole32&show_icons=true&layout=compact&theme=dark)](https://github.com/Ivole32)
 
 ## Minecraft's EULA
 
