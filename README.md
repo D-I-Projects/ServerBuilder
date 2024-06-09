@@ -14,8 +14,6 @@ Please don't directly judge us if we've got something wrong with Licenses if you
 
 ## Team
 
-![ServerBuilderRemakeLogoGIF](https://github.com/Ivole32/Server-Builder/assets/158351052/69567477-4437-4938-82c7-3ee23983770a)
-
 [![wfxey GitHub stats](https://github-readme-stats.vercel.app/api?username=wfxey&show_icons=true&layout=compact&theme=dark)](https://github.com/wfxey) [![Ivole32 GitHub stats](https://github-readme-stats.vercel.app/api?username=Ivole32&show_icons=true&layout=compact&theme=dark)](https://github.com/Ivole32)
 
 ## Minecraft's EULA
