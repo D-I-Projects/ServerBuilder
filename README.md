@@ -7,6 +7,7 @@
 With our program you can easily create Minecraft Servers and start them.
 For sure that is not the only thing our program does, just download it and have a look at it by yourself!
 
+[![wfxey GitHub stats](https://github-readme-stats.vercel.app/api?username=wfxey&show_icons=true&layout=compact&theme=dark)](https://github.com/wfxey)     [![Ivole32 GitHub stats](https://github-readme-stats.vercel.app/api?username=Ivole32&show_icons=true&layout=compact&theme=dark)](https://github.com/Ivole32)
 ## Note
 
 Just place your questions by direct messages @iv32. or @wfxey. In the case that you can not sent us a message, contact us via our Discord Server https://discord.gg/t4mYGbErAn.
