@@ -1,5 +1,5 @@
 # We moved on
-https://github.com/wfxey/Destor
+This projct got continued under : https://github.com/wfxey/Destor
 
 # Server Builder
 
