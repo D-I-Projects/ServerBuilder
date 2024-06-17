@@ -1,3 +1,6 @@
+# We moved on
+https://github.com/wfxey/Destor
+
 # Server Builder
 
 [![DevSkim](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml/badge.svg)](https://github.com/Ivole32/Server-Builder/actions/workflows/devskim.yml)
